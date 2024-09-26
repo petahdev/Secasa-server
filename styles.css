@@ -1,0 +1,156 @@
+/* General resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: #202221;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: #22C55E;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.toggle-button {
+    position: absolute;
+    
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background-color: #22C55E;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hidden */
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar.active {
+    left: 0; /* Slide-in when active */
+}
+
+.sidebar .logo img {
+    max-width: 150px;
+    margin: 20px auto;
+    display: block;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    padding: 15px;
+}
+
+.sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.groups {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    max-width: 1200px;
+}
+
+.group-block {
+    background-color: #F5F5F5;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 30%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, height 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 350px; /* Height for PC view */
+}
+
+.group-block:hover {
+    transform: translateY(-5px);
+}
+
+.group-block h2 {
+    color: #202221;
+    margin-bottom: 20px;
+}
+
+/* Centered and wider button */
+button {
+    background-color: #22C55E;
+    border: none;
+    color: white;
+    padding: 15px 40px; /* Wider button */
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: auto; /* Centered horizontally */
+    display: inline-block;
+    width: 70%; /* Wider button */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: white;
+    color: #22C55E;
+    transform: translateY(-3px);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #22C55E;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .group-block {
+        width: 100%;
+        height: auto; /* Flexible height on mobile */
+    }
+}
